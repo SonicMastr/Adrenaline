@@ -43,17 +43,12 @@ install(DIRECTORY ${CMAKE_BINARY_DIR}/stubs/
   FILES_MATCHING PATTERN "*.a"
 )
 
-add_custom_target(copy
-  COMMAND cp adrenaline_kernel.skprx H:/app/PSPEMUCFW/sce_module/adrenaline_kernel.skprx
-  DEPENDS adrenaline_kernel.skprx
-)
-
 add_custom_target(pkg
-  COMMAND cp adrenaline_kernel.skprx ../../bubble/pkg/sce_module/adrenaline_kernel.skprx
+  COMMAND cp adrenaline_kernel.skprx ${CMAKE_SOURCE_DIR}/../bubble/pkg/sce_module/adrenaline_kernel.skprx
   DEPENDS adrenaline_kernel.skprx
 )
 
 add_custom_target(updater
-  COMMAND bin2c adrenaline_kernel.skprx ../../cef/updater/adrenaline_kernel.h adrenaline_kernel
+  COMMAND bin2c adrenaline_kernel.skprx ${CMAKE_SOURCE_DIR}/../cef/updater/adrenaline_kernel.h adrenaline_kernel
   DEPENDS adrenaline_kernel.skprx
 )

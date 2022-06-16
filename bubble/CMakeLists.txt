@@ -50,8 +50,3 @@ vita_create_vpk(Adrenaline.vpk ${VITA_TITLEID} eboot.bin
 	   pkg/sce_module/adrenaline_user.suprx sce_module/adrenaline_user.suprx
 	   pkg/sce_module/adrenaline_vsh.suprx sce_module/adrenaline_vsh.suprx
 )
-
-add_custom_target(copy
-  COMMAND cp eboot.bin F:/app/${VITA_TITLEID}/eboot.bin
-  DEPENDS eboot.bin
-)

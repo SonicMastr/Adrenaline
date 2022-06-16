@@ -95,17 +95,12 @@ vita_create_self(adrenaline_user.suprx adrenaline_user CONFIG exports.yml UNSAFE
 
 vita_create_stubs(stubs adrenaline_user ${CMAKE_SOURCE_DIR}/exports.yml)
 
-add_custom_target(copy
-  COMMAND cp adrenaline_user.suprx F:/app/PSPEMUCFW/sce_module/adrenaline_user.suprx
-  DEPENDS adrenaline_user.suprx
-)
-
 add_custom_target(pkg
-  COMMAND cp adrenaline_user.suprx ../../bubble/pkg/sce_module/adrenaline_user.suprx
+  COMMAND cp adrenaline_user.suprx ${CMAKE_SOURCE_DIR}/../bubble/pkg/sce_module/adrenaline_user.suprx
   DEPENDS adrenaline_user.suprx
 )
 
 add_custom_target(updater
-  COMMAND bin2c adrenaline_user.suprx ../../cef/updater/adrenaline_user.h adrenaline_user
+  COMMAND bin2c adrenaline_user.suprx ${CMAKE_SOURCE_DIR}/../cef/updater/adrenaline_user.h adrenaline_user
   DEPENDS adrenaline_user.suprx
 )

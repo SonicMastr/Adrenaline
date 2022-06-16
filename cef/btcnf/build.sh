@@ -1,0 +1,11 @@
+cd pspbtcnf_inferno
+sh build.sh
+cd ../pspbtcnf_normal
+sh build.sh
+cd ../pspbtcnf_np9660
+sh build.sh
+cd ../pspbtcnf_recovery
+sh build.sh
+cd ../pspbtcnf_march33
+sh build.sh
+cd ..
